@@ -1,5 +1,5 @@
 from app import app, SQLAlchemy
-from . import create_table
+from . import data
 
 db = SQLAlchemy(app)
 
@@ -22,8 +22,8 @@ class Users(db.Model):  # Юзеры
         self.email = email
         self.role = role
         self.phone = phone
-        self.offers = create_table.offers
-        self.orders = create_table.orders
+        self.offers = data.offers
+        self.orders = data.orders
 
     def __repr__(self):
         return f'<user: {self.id}'
@@ -80,12 +80,12 @@ class Offers(db.Model):  # предложение
 
 with app.app_context():
     db.create_all()
-    for user in create_table.users:
+    for user in data.users:
         db.session.add(Users(**{k: v for k, v in user.items() if k != 'id'}))
 
-    for order in create_table.orders:
+    for order in data.orders:
         db.session.add(Orders(**{k: v for k, v in order.items() if k != 'id'}))
 
-    for offer in create_table.offers:
+    for offer in data.offers:
         db.session.add(Offers(**{k: v for k, v in offer.items() if k != 'id'}))
     db.session.commit()

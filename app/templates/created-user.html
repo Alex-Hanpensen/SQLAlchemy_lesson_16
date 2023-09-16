@@ -1,0 +1,18 @@
+{%extends 'main.html'%}
+{% block title %}
+
+{%endblock%}
+{% block body %}
+<h3>Внести данные</h3>
+<form action="/created-user" method="POST">
+    <input type="text" name="first_name" id="first_name" class="from-control" placeholder="Введите имя"><br>
+    <input type="text" name="last_name" id="last_name" class="from-control" placeholder="Введите фамилию"><br>
+    <input type="text" name="age" id="age" class="from-control" placeholder="Возрост"><br>
+    <input type="text" name="email" id="email" class="from-control" placeholder="Введите email"><br>
+    <input type="text" name="role" id="role" class="from-control" placeholder="Введите роль"><br>
+    <input type="text" name="phone" id="phone" class="from-control" placeholder="Введите телефон"><br>
+    <input type="submit" class="btn btn-success" value="Отправить">
+
+</form>
+
+{%endblock%}

@@ -1,0 +1,18 @@
+{%extends 'main.html'%}
+{% block title %}
+
+Все пользователи
+
+{%endblock%}
+{% block body %}
+
+<h1>Общая информация</h1>
+
+    {% for el in item %}
+    <h4>{{ el.first_name  }} {{el.last_name}}</h4>
+    <a href='/users/{{el.id}}' class="new">Детальнее</a>
+
+{% endfor %}
+
+
+{%endblock%}

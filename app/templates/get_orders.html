@@ -1,0 +1,18 @@
+{%extends 'main.html'%}
+{% block title %}
+
+Все заказы
+
+{%endblock%}
+{% block body %}
+
+<h1>Общая информация</h1>
+
+    {% for el in item %}
+    <h4>{{ el.name  }} {{el.start_date}}</h4>
+    <a href='/orders/{{el.id}}' class="new">Детальнее</a>
+
+{% endfor %}
+
+
+{%endblock%}

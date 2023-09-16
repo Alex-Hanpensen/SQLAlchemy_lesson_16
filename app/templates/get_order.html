@@ -1,0 +1,16 @@
+{%extends 'main.html'%}
+{% block title %}
+
+Данные
+
+{%endblock%}
+{% block body %}
+<h2>Полная информация о пользователе:</h2><br>
+    <h3>Что требуется: {{ item.name }}</h3>
+    <h3> Полное описание заадачи: {{ item.description }}</h3>
+    <h3> Дата начала: {{ item.start_date }}</h3>
+    <h3> Исполнить до: {{ item.end_date }}</h3>
+    <h3> Адрес :{{ item.address }}</h3>
+
+{%endblock%}
+
