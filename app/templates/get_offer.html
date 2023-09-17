@@ -1,0 +1,14 @@
+{%extends 'main.html'%}
+{% block title %}
+
+Данные
+
+{%endblock%}
+{% block body %}
+<h2>Полная информация о предложении:</h2><br>
+    <h3>Исполнитель: {{ item[0] }}</h3>
+    <h3>Описание: {{ item[1].description }}</h3>
+    <a class="btn btn-danger" href='/offers/{{item[2].id}}/del'>Удалить задачу</a>
+    <a class="btn btn-success" href='/offers/{{ item[2].id }}/update'>Редактировать</a>
+
+{%endblock%}

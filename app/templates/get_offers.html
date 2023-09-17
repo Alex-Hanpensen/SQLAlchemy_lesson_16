@@ -1,0 +1,18 @@
+{%extends 'main.html'%}
+{% block title %}
+
+Все предложения
+
+{%endblock%}
+{% block body %}
+
+<h1>Общая информация</h1>
+
+    {% for el in item %}
+    <h4>{{ el  }}</h4>
+    <a href='/offers/{{el.id}}' class="new">Детальнее</a>
+
+{% endfor %}
+
+
+{%endblock%}

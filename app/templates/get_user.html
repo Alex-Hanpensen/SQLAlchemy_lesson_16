@@ -12,5 +12,7 @@
     <h3>email: {{ item.email }}</h3>
     <h3>Исполнитьель/Заказчик: [{{ item.role }}]</h3>
     <h3>Тел: {{ item.phone }}</h3>
+    <a class="btn btn-danger" href='/users/{{item.id}}/del'>Удалить пользователя</a>
+    <a class="btn btn-success" Href='/users/{{item.id}}/update'>Редактировать</a>
 
 {%endblock%}

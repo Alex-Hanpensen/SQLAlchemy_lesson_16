@@ -26,7 +26,7 @@ class Users(db.Model):  # Юзеры
         self.orders = data.orders
 
     def __repr__(self):
-        return f'<user: {self.id}'
+        return f'<user: {self.first_name}'
 
 
 class Orders(db.Model):  # Заказы
@@ -42,12 +42,12 @@ class Orders(db.Model):  # Заказы
     customer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     executor_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-    customers = db.relationship('Users',
+    customers = db.relationship('Users', cascade="all,delete",
                                 foreign_keys=[Users.id],
                                 primaryjoin="Orders.customer_id == Users.id and Users.role == \"customer\"",
                                 )
 
-    executors = db.relationship('Users',
+    executors = db.relationship('Users', cascade="all,delete",
                                 foreign_keys=[Users.id],
                                 primaryjoin="Orders.executor_id == Users.id and Users.role == \"executor\"",
                                 overlaps="customers"

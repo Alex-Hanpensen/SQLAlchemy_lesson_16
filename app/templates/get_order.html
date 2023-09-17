@@ -10,7 +10,10 @@
     <h3> Полное описание заадачи: {{ item.description }}</h3>
     <h3> Дата начала: {{ item.start_date }}</h3>
     <h3> Исполнить до: {{ item.end_date }}</h3>
-    <h3> Адрес :{{ item.address }}</h3>
+    <h3> Адрес : {{ item.address }}</h3>
+    <h3> Цена : {{ item.price }}</h3>
+    <a class="btn btn-danger" href='/orders/{{item.id}}/del'>Удалить задачу</a>
+    <a class="btn btn-success" href='/orders/{{item.id}}/update'>Редактировать</a>
 
 {%endblock%}
 

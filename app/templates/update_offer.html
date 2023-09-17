@@ -1,0 +1,14 @@
+{%extends 'main.html'%}
+{% block title %}
+
+{%endblock%}
+{% block body %}
+<h3>Обновление данные</h3>
+<form method="POST">
+    <input type="text" name="order_id" id="order_id" class="from-control" value="{{item.order_id}}" placeholder="Отредактируйте  id заказ"><br>
+    <input type="text" name="executor_id" id="executor_id" class="from-control" value="{{item.executor_id}}" placeholder="Отредактируйте id исполнителя"><br>
+    <input type="submit" class="btn btn-success" value="Обновить">
+
+</form>
+
+{%endblock%}
